@@ -1,0 +1,45 @@
+/* Header Styles */
+.header {
+    /* Add your header styles here */
+    background-color: #007bff; /* Blue header background */
+    color: #ffffff; /* White text color */
+}
+
+.nav-links li:hover {
+    /* Add hover effects for navigation links */
+    text-decoration: underline;
+}
+
+/* Main Content Styles */
+.main-content {
+    /* Add your main content styles here */
+    background-image: url('your_background_image.jpg'); /* Replace with actual background image */
+    background-size: cover;
+    padding: 50px 20px;
+    color: #333333; /* Dark text color */
+}
+
+/* Button Styles */
+.book-now-btn {
+    /* Add your button styles here */
+    padding: 12px 24px;
+    background-color: #dc3545; /* Red button background */
+    color: #ffffff; /* White button text */
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.book-now-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Footer Styles */
+.footer {
+    /* Add your footer styles here */
+    background-color: #f8f9fa; /* Light background color */
+    padding: 20px;
+    color: #333333; /* Dark text color */
+}
