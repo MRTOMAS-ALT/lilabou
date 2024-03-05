@@ -5,147 +5,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="contact-info.css" type="text/css"/>
     <link rel="stylesheet" href="switch.css" type="text/css"/>
-    <title>Loading Animation</title>
+  <title></title>
     <style>
-        /* Add your CSS styles here */
-        #page {
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-image: url('wallpaper.jpg'); /* Replace 'background-image.jpg' with the path to your image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0; /* Change the background color here */
+        }
+        .header {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #333; /* Background color for the loading animation */
+            justify-content: space-between;
+            align-items: center; /* Align items vertically */
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        /* Add this CSS to make the navigation bar responsive */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to next line */
+            gap: 10px; /* Add space between items */
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            padding: 3px;
+        }
+        .nav-links li a {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+            padding: 10px; /* Add padding to improve touchability */
+        }
+        .nav-links li a:hover {
+            background-color: #ddd; /* Change background color on hover */
+        }
+        /* End of responsive navigation bar styles */
+        .main-content {
+            padding: 100px 20px 20px; /* Add extra top padding to compensate for fixed navbar */
+        }
+        .main-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .book-now-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .social-media-links {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .social-media-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+        .social-media-links li a {
+            color: #000;
+            font-size: 24px;
+        }
+        /* Add style for footer */
+        .footer {
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-transform: lowercase;
+            text-align: center;
+        }
+        /* Style for the switch */
+        .switch {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
         }
 
-        #container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 34px;
         }
 
-        #h3 {
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+           h2 {
             color: white;
         }
-
-        #ring {
-            width: 190px;
-            height: 190px;
-            border: 1px solid transparent;
-            border-radius: 50%;
-            position: absolute;
-        }
-
-        #ring:nth-child(1) {
-            border-bottom: 8px solid rgb(255, 141, 249);
-            animation: rotate1 2s linear infinite;
-        }
-
-        /* Add other keyframes and styles */
-
-        @keyframes rotate1 {
-            from {
-                transform: rotateX(50deg) rotateZ(110deg);
-            }
-            to {
-                transform: rotateX(50deg) rotateZ(470deg);
-            }
-        }
-        /* Add other keyframes */
-
     </style>
 </head>
 <body>
-<div id="page">
-    <div id="container">
-        <div id="ring"></div>
-        <div id="ring"></div>
-        <div id="ring"></div>
-        <div id="ring"></div>
-        <div id="h3">By LilaBou</div>
+    <div class="header">
+        <!-- Switch added here -->
+        <label class="switch">
+            <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="#ffd43b"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg></span>
+            <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg></span>   
+            <input type="checkbox" class="input">
+            <span class="slider"></span>
+        </label>
+        <!-- End of switch -->
+
+        <h1>BROWQUEEN</h1>
+        <ul class="nav-links">
+            <li><a href="#">ΑΡΧΙΚΗ</a></li>
+            <li><a href="#">ΦΩΤΟΓΡΑΦΙΕΣ</a></li>
+            <li><a href="#">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+        </ul>
     </div>
-</div>
-
-<script>
-    // Show loading animation for 3 seconds
-    setTimeout(function() {
-        // Hide the loading animation after 3 seconds
-        document.getElementById('page').style.display = 'none';
-        // Add your code to load the main website content here
-        document.body.style.display = 'block'; // Show the main content
-    }, 3000);
-</script>
-
-<div class="header">
-    <!-- Switch added here -->
-    <label class="switch">
-        <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="#ffd43b"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg></span>
-        <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg></span>   
-        <input type="checkbox" class="input">
-        <span class="slider"></span>
-    </label>
-    <!-- End of switch -->
-
-    <h1>BROWQUEEN</h1>
-    <ul class="nav-links">
-        <li><a href="#">ΑΡΧΙΚΗ</a></li>
-        <li><a href="#">ΦΩΤΟΓΡΑΦΙΕΣ</a></li>
-        <li><a href="#">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
-    </ul>
-</div>
-<div class="main-content">
-    <h2>Καλώς ήρθατε στο BROWQUEEN HOME</h2>
-    <p>Ο απόλυτος προορισμός σας για τελειότητα φρυδιών. Βελτιώστε την ομορφιά σας με τέλεια φρύδια</p>
-    <button class="book-now-btn" onclick="window.location.href='https://www.instagram.com/your_instagram_username'">Book Now</button>
-</div>
-
-<div class="features-section" style="background-color: #e9ecef; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-    <div class="feature-box" style="width: calc(50% - 20px); max-width: 400px;">
-        <h3>Διαμόρφωση φρυδιών ακριβείας</h3>
-        <p>Εξειδικευμένα σμιλεμένα φρύδια για να αναδείξουν τη φυσική ομορφιά σας</p>
+    <div class="main-content">
+        <h2>Καλώς ήρθατε στο BROWQUEEN HOME</h2>
+        <p>Ο απόλυτος προορισμός σας για τελειότητα φρυδιών. Βελτιώστε την ομορφιά σας με τέλεια φρύδια</p>
+        <button class="book-now-btn" onclick="window.location.href='https://www.instagram.com/your_instagram_username'">Book Now</button>
     </div>
-    <div class="feature-box" style="width: calc(50% - 20px); max-width: 400px;">
-        <h3>Προσαρμοσμένο σχέδιο φρυδιών</h3>
-        <p>Προσαρμοσμένα σχέδια φρυδιών που ταιριάζουν στο μοναδικό σχήμα και στυλ προσώπου σας</p>
-    </div>
-    <div class="feature-box" style="width: calc(50% - 20px); max-width: 400px;">
-        <h3>Επαγγελματική βαφή φρυδιών</h3>
-        <p>Βελτιώστε το χρώμα και τον ορισμό των φρυδιών σας με τις υπηρεσίες χρωματισμού μας</p>
-    </div>
-    <div class="feature-box" style="width: calc(50% - 20px); max-width: 400px;">
-        <h3>Συμβουλές συντήρησης φρυδιών</h3>
-        <p>Λάβετε εξατομικευμένες συμβουλές και συμβουλές για να διατηρήσετε τέλεια φρύδια μεταξύ των ραντεβού</p>
-    </div>
-</div>
 
-<div class="about-section">
-    <h2>Σχετικα με εμένα</h2>
-    <p>Καλώς ήρθατε στο BrowQueen, τον απόλυτο προορισμό σας για τελειότητα φρυδιών. Η αποστολή μου είναι να ενισχύσω τη φυσική σας ομορφιά μέσα από τέλεια σμιλεμένα φρύδια..</p>
-    <p>Στο BrowQueen, είμαι περήφανη που παρέχω εξατομικευμένες υπηρεσίες διαμόρφωσης και σχεδίασης φρυδιών προσαρμοσμένες στις μοναδικές προτιμήσεις σχήματος προσώπου και στυλ.</p>
-    <p>Με τις επαγγελματικές υπηρεσίες βαφής φρυδιών, μπορώ να βελτιώσω το χρώμα και τον ορισμό των φρυδιών σας, δίνοντάς σας μια άψογη εμφάνιση που διαρκεί. Επιπλέον,συντομα έμπειρο προσωπικό για να σας παρέχει εξατομικευμένες συμβουλές και συμβουλές για να διατηρείτε τέλεια φρύδια μεταξύ των ραντεβού..</p>
-    <p>Ζήστε τη διαφορά στο BrowQueen home και ανακαλύψτε την αυτοπεποίθηση που συνοδεύει τα τέλεια περιποιημένα φρύδια. Κλείστε το ραντεβού σας σήμερα και αφήστε μας να σας βοηθήσουμε να επιτύχετε την τελειότητα των φρυδιών!!</p>
-</div>
+    <div class="features-section" style="background-color: #e9ecef; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+        <div class="feature-box" style="width: calc(50% - 20px); max-width: 400px;">
+            <h3>Διαμόρφωση φρυδιών ακριβείας</h3>
+            <p>Εξειδικευμένα σμιλεμένα φρύδια για να αναδείξουν τη φυσική ομορφιά σας</p>
+        </div>
+        <div class="feature-box" style="width: calc(50% - 20px); max-width: 400px;">
+            <h3>Προσαρμοσμένο σχέδιο φρυδιών</h3>
+            <p>Προσαρμοσμένα σχέδια φρυδιών που ταιριάζουν στο μοναδικό σχήμα και στυλ προσώπου σας</p>
+        </div>
+        <div class="feature-box" style="width: calc(50% - 20px); max-width: 400px;">
+            <h3>Επαγγελματική βαφή φρυδιών</h3>
+            <p>Βελτιώστε το χρώμα και τον ορισμό των φρυδιών σας με τις υπηρεσίες χρωματισμού μας</p>
+        </div>
+        <div class="feature-box" style="width: calc(50% - 20px); max-width: 400px;">
+            <h3>Συμβουλές συντήρησης φρυδιών</h3>
+            <p>Λάβετε εξατομικευμένες συμβουλές και συμβουλές για να διατηρήσετε τέλεια φρύδια μεταξύ των ραντεβού</p>
+        </div>
+    </div>
 
-<div class="contact-info">
-    <h4 style="text-align: center;"><i class="fas fa-prescription-bottle-alt"></i> Τσινόπουλος Φώτης - Φαρμακείο Καρδίτσα</h4>
-    <p style="text-align: center;">Ιωάννη Γακιόπουλου 5 (πρώην Αζά) , Καρδίτσα</p>
-    <p style="text-align: center;">Τηλεφωνο: 2441022155</p>
-    <p style="text-align: center;"><a href="https://www.google.com/maps?q=Ιωάννη Γακιόπουλου 5, Καρδίτσα, Καρδίτσας" target="_blank">Προβολή στον χαρτη</a></p>
-    <p style="text-align: center;"><a href="https://www.instagram.com/your_instagram_username" target="_blank">Ακολουθήστε με στο Instagram</a></p>
-</div>
+    <div class="about-section">
+        <h2>Σχετικα με εμένα</h2>
+        <p>Καλώς ήρθατε στο BrowQueen, τον απόλυτο προορισμό σας για τελειότητα φρυδιών. Η αποστολή μου είναι να ενισχύσω τη φυσική σας ομορφιά μέσα από τέλεια σμιλεμένα φρύδια..</p>
+        <p>Στο BrowQueen, είμαι περήφανη που παρέχω εξατομικευμένες υπηρεσίες διαμόρφωσης και σχεδίασης φρυδιών προσαρμοσμένες στις μοναδικές προτιμήσεις σχήματος προσώπου και στυλ.</p>
+        <p>Με τις επαγγελματικές υπηρεσίες βαφής φρυδιών, μπορώ να βελτιώσω το χρώμα και τον ορισμό των φρυδιών σας, δίνοντάς σας μια άψογη εμφάνιση που διαρκεί. Επιπλέον,συντομα έμπειρο προσωπικό για να σας παρέχει εξατομικευμένες συμβουλές και συμβουλές για να διατηρείτε τέλεια φρύδια μεταξύ των ραντεβού..</p>
+        <p>Ζήστε τη διαφορά στο BrowQueen home και ανακαλύψτε την αυτοπεποίθηση που συνοδεύει τα τέλεια περιποιημένα φρύδια. Κλείστε το ραντεβού σας σήμερα και αφήστε μας να σας βοηθήσουμε να επιτύχετε την τελειότητα των φρυδιών!!</p>
+    </div>
 
-<!-- Footer -->
-<div class="footer">
-    |20224 All rights reserved. | Designed by MrTom
-</div>
-<!-- End of Footer -->
-<div class="corner-image">
+    <div class="contact-info">
+        <h4 style="text-align: center;"><i class="fas fa-prescription-bottle-alt"></i> Τσινόπουλος Φώτης - Φαρμακείο Καρδίτσα</h4>
+        <p style="text-align: center;">Ιωάννη Γακιόπουλου 5 (πρώην Αζά) , Καρδίτσα</p>
+        <p style="text-align: center;">Τηλεφωνο: 2441022155</p>
+        <p style="text-align: center;"><a href="https://www.google.com/maps?q=Ιωάννη Γακιόπουλου 5, Καρδίτσα, Καρδίτσας" target="_blank">Προβολή στον χαρτη</a></p>
+        <p style="text-align: center;"><a href="https://www.instagram.com/your_instagram_username" target="_blank">Ακολουθήστε με στο Instagram</a></p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      |20224 All rights reserved. | Designed by MrTom
+    </div>
+    <!-- End of Footer -->
+    <div class="corner-image">
     <img src="farmakeio-removebg-preview.png" alt="Small Image">
 </div>
 <div class="lancome-image">
     <img src="lancome.png" alt="Small Image">
 </div>
 
-<script>
+    
+    <script>
     document.addEventListener("DOMContentLoaded", function() {
         const checkbox = document.querySelector('.input');
 
