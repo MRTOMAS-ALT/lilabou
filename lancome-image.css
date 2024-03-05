@@ -5,7 +5,7 @@
     z-index: 999; /* Ensure the image stays on top of other content */
 }
 
-.corner-image img {
+.lancome-image img {
     width: 50px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
 }
