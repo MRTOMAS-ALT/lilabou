@@ -1,0 +1,11 @@
+.lancome-image {
+    position: fixed;
+    bottom: 10px; /* Adjust this value to set the distance from the bottom */
+    right: 30px; /* Adjust this value to set the distance from the right */
+    z-index: 999; /* Ensure the image stays on top of other content */
+}
+
+.corner-image img {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
