@@ -9,6 +9,25 @@
       <link rel="stylesheet" href="lancome-image.css" type="text/css"/>
 <title></title>
     <style>
+        .corner-image, .lancome-image {
+    position: fixed;
+    bottom: 10px; /* Adjust this value to set the distance from the bottom */
+    z-index: 999; /* Ensure the images stay on top of other content */
+}
+
+.corner-image {
+    right: 140px; /* Adjust this value to set the distance from the right */
+}
+
+.lancome-image {
+    right: 80px; /* Adjust this value to set the distance from the right */
+}
+
+.corner-image img, .lancome-image img {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
