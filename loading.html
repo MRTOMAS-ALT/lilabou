@@ -109,3 +109,13 @@
             document.body.style.display = 'block'; // Show the main content
         }, 3000);
     </script>
+      <script>
+        // Load the loading.html file first
+        window.onload = function() {
+            setTimeout(function() {
+                // Redirect to your main website after 3 seconds
+                window.location.href = "main_website.html"; // Replace "main_website.html" with the path to your main website file
+            }, 3000);
+        };
+    </script>
+    <iframe src="loading.html" style="display:none;"></iframe>
