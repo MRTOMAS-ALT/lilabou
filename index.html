@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="switch.css" type="text/css"/>
   <title></title>
     <style>
-      .corner-image, .lancome-image {
+   .corner-image, .lancome-image {
     position: fixed;
     bottom: 10px;
     z-index: 999;
@@ -18,14 +18,13 @@
 }
 
 .lancome-image {
-    left: 70px;
+    left: calc(10px + 50px + 20px); /* Adjusted for the width of the first image */
 }
 
 .corner-image img, .lancome-image img {
     width: 50px;
     height: auto;
 }
-
 
         body {
             font-family: Arial, sans-serif;
