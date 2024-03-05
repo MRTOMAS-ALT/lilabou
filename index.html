@@ -7,24 +7,13 @@
     <link rel="stylesheet" href="switch.css" type="text/css"/>
   <title></title>
     <style>
-   .corner-image, .lancome-image {
+   .corner-image {
     position: fixed;
-    bottom: 10px;
-    z-index: 999;
+    bottom: 10px; /* Adjust this value to set the distance from the bottom */
+    right: 10px; /* Adjust this value to set the distance from the right */
+    z-index: 999; /* Ensure the image stays on top of other content */
 }
 
-.corner-image {
-    left: 10px;
-}
-
-.lancome-image {
-    left: calc(10px + 50px + 20px); /* Adjusted for the width of the first image */
-}
-
-.corner-image img, .lancome-image img {
-    width: 50px;
-    height: auto;
-}
 
         body {
             font-family: Arial, sans-serif;
