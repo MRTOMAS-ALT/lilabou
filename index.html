@@ -24,6 +24,37 @@
             padding: 20px;
             background-color: #f0f0f0; /* Change the background color here */
         }
+           /* Additional CSS for the video background */
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1000;
+            overflow: hidden;
+        }
+
+        /* Additional CSS for mobile responsiveness */
+        @media only screen and (max-width: 768px) {
+            body {
+                padding-top: 100px; /* Add space for fixed header */
+            }
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #f8f9fa;
+                z-index: 1000;
+            }
+            .main-content {
+                padding-top: 200px; /* Add space for fixed header */
+            }
+
+        
         .header {
             display: flex;
             justify-content: space-between;
